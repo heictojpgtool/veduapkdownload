@@ -1,0 +1,132 @@
+.contactGrid {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 28px;
+  margin-top: 8px;
+}
+
+.contactInfo {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.infoCard {
+  background: #1a1a1a;
+  border: 1px solid #222;
+  border-radius: 10px;
+  padding: 16px;
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+}
+
+.infoIcon {
+  font-size: 1.3rem;
+  margin-top: 2px;
+}
+
+.infoCard h3 {
+  font-size: 0.88rem;
+  font-weight: 600;
+  color: #ffffff;
+  margin: 0 0 4px;
+}
+
+.infoCard p {
+  font-size: 0.82rem;
+  color: #888;
+  margin: 0;
+}
+
+.contactForm {
+  background: #1a1a1a;
+  border: 1px solid #222;
+  border-radius: 10px;
+  padding: 28px;
+}
+
+.formGroup {
+  margin-bottom: 18px;
+}
+
+.formGroup label {
+  display: block;
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: #cccccc;
+  margin-bottom: 7px;
+}
+
+.formGroup input,
+.formGroup textarea {
+  width: 100%;
+  background: #111111;
+  border: 1px solid #2a2a2a;
+  border-radius: 7px;
+  padding: 10px 14px;
+  color: #ffffff;
+  font-size: 0.9rem;
+  outline: none;
+  transition: border-color 0.2s;
+  resize: vertical;
+  box-sizing: border-box;
+}
+
+.formGroup input:focus,
+.formGroup textarea:focus {
+  border-color: #e63946;
+}
+
+.formGroup input::placeholder,
+.formGroup textarea::placeholder {
+  color: #444;
+}
+
+.submitBtn {
+  width: 100%;
+  background: #e63946;
+  color: #ffffff;
+  border: none;
+  border-radius: 7px;
+  padding: 12px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.submitBtn:hover {
+  background: #c1121f;
+}
+
+.successMsg {
+  text-align: center;
+  padding: 40px 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
+.successMsg span {
+  font-size: 2rem;
+}
+
+.successMsg h3 {
+  color: #ffffff;
+  font-size: 1.2rem;
+  margin: 0;
+}
+
+.successMsg p {
+  color: #888;
+  font-size: 0.9rem;
+  margin: 0;
+}
+
+@media (max-width: 640px) {
+  .contactGrid {
+    grid-template-columns: 1fr;
+  }
+}

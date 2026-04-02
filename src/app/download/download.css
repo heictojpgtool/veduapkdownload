@@ -1,0 +1,255 @@
+/* Stream India — download.css */
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+.dl-page {
+  font-family: "Inter", "Segoe UI", system-ui, sans-serif;
+  background: #f0f2fb;
+  min-height: 100vh;
+  color: #1a1a1a;
+}
+
+/* HEADER */
+.dl-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 14px 28px;
+  background: #fff;
+  border-bottom: 1px solid #e5e5e5;
+}
+
+.dl-logo {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 1rem;
+  font-weight: 800;
+  color: #111;
+  text-decoration: none;
+}
+
+.dl-logo img {
+  border-radius: 8px;
+}
+
+.dl-back {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #6c2bd9;
+  text-decoration: none;
+}
+
+.dl-back:hover { text-decoration: underline; }
+
+/* MAIN */
+.dl-main {
+  display: flex;
+  justify-content: center;
+  padding: 40px 20px 60px;
+}
+
+/* CARD */
+.dl-card {
+  background: #fff;
+  border-radius: 16px;
+  box-shadow: 0 8px 32px rgba(0,0,0,.10);
+  padding: 32px 36px;
+  width: 100%;
+  max-width: 520px;
+}
+
+/* APP ROW */
+.dl-app-row {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  margin-bottom: 4px;
+}
+
+.dl-app-icon {
+  border-radius: 16px !important;
+  flex-shrink: 0;
+}
+
+.dl-app-row h1 {
+  font-size: 1.4rem;
+  font-weight: 900;
+  color: #111;
+  margin-bottom: 3px;
+}
+
+.dl-sub {
+  font-size: 0.85rem;
+  color: #666;
+  margin-bottom: 8px;
+}
+
+.dl-badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.dl-badges span {
+  background: #f0f0f0;
+  color: #444;
+  font-size: 0.75rem;
+  font-weight: 600;
+  padding: 4px 10px;
+  border-radius: 20px;
+}
+
+.dl-badges .green {
+  background: #e6f9ee;
+  color: #1a7a40;
+}
+
+/* DIVIDER */
+.dl-divider {
+  height: 1px;
+  background: #eee;
+  margin: 22px 0;
+}
+
+/* COUNTDOWN */
+.dl-countdown {
+  text-align: center;
+}
+
+.dl-countdown p {
+  font-size: 0.9rem;
+  color: #555;
+  margin-bottom: 14px;
+}
+
+.ready-txt {
+  font-size: 1rem !important;
+  font-weight: 700;
+  color: #1a7a40 !important;
+}
+
+.dl-timer {
+  font-size: 3.5rem;
+  font-weight: 900;
+  color: #6c2bd9;
+  line-height: 1;
+  margin-bottom: 14px;
+}
+
+.dl-progress {
+  height: 6px;
+  background: #ede9f8;
+  border-radius: 6px;
+  margin: 0 auto 20px;
+  max-width: 320px;
+  overflow: hidden;
+}
+
+.dl-fill {
+  height: 100%;
+  background: #6c2bd9;
+  border-radius: 6px;
+  transition: width 1s linear;
+}
+
+/* BUTTONS */
+.dl-btn {
+  display: inline-block;
+  width: 100%;
+  max-width: 360px;
+  padding: 15px 24px;
+  border-radius: 10px;
+  font-size: 1rem;
+  font-weight: 800;
+  text-align: center;
+  text-decoration: none;
+  cursor: pointer;
+  border: none;
+  transition: background 0.2s, transform 0.1s;
+}
+
+.dl-btn.disabled {
+  background: #c8b8f0;
+  color: #fff;
+  cursor: not-allowed;
+}
+
+.dl-btn.active {
+  background: #6c2bd9;
+  color: #fff;
+}
+
+.dl-btn.active:hover {
+  background: #5a1fc7;
+  transform: translateY(-1px);
+}
+
+.dl-fileinfo {
+  font-size: 0.78rem !important;
+  color: #999 !important;
+  margin-top: 10px !important;
+}
+
+/* INSTALL STEPS */
+.dl-steps h2 {
+  font-size: 1rem;
+  font-weight: 800;
+  color: #111;
+  margin-bottom: 14px;
+}
+
+.dl-steps ol {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.dl-steps li {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 0.88rem;
+  color: #333;
+  line-height: 1.5;
+}
+
+.dl-steps li span:first-child {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 26px;
+  height: 26px;
+  min-width: 26px;
+  border-radius: 50%;
+  background: #6c2bd9;
+  color: #fff;
+  font-weight: 700;
+  font-size: 0.78rem;
+}
+
+/* SECURITY */
+.dl-security {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 14px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: #555;
+}
+
+/* RESPONSIVE */
+@media (max-width: 480px) {
+  .dl-card {
+    padding: 24px 20px;
+  }
+  .dl-app-row h1 {
+    font-size: 1.15rem;
+  }
+  .dl-timer {
+    font-size: 2.8rem;
+  }
+}
