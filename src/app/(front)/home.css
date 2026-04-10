@@ -11,11 +11,22 @@
   padding: 0;
 }
 
+/* ── CRITICAL FIX: Stop horizontal overflow ── */
+html,
+body {
+  overflow-x: hidden;
+  width: 100%;
+  max-width: 100%;
+}
+
 .si-page {
   font-family: "Inter", "Segoe UI", system-ui, sans-serif;
   color: #1a1a1a;
   background: #ffffff;
   line-height: 1.6;
+  overflow-x: hidden;
+  width: 100%;
+  max-width: 100%;
 }
 
 /* ─────────────────────────────────────
@@ -29,19 +40,27 @@
   padding: 52px 80px;
   background: #eef0fb;
   min-height: 420px;
+  /* FIX: hero itself must not overflow */
+  width: 100%;
+  overflow: hidden;
 }
 
 .si-hero-left {
   max-width: 520px;
   flex: 1;
+  /* FIX: flex child must not push past container */
+  min-width: 0;
 }
 
 .si-hero-left h1 {
   font-size: 2.75rem;
   font-weight: 900;
   color: #111;
-  line-height: 1.05;
+  line-height: 1.1;
   margin-bottom: 6px;
+  /* FIX: long titles must wrap, not overflow */
+  word-break: break-word;
+  overflow-wrap: break-word;
 }
 
 .si-tagline {
@@ -57,6 +76,90 @@
   line-height: 1.7;
   margin-bottom: 16px;
   max-width: 430px;
+}
+
+/* ─────────────────────────────────────
+   SEO ADVANCED FIXES
+───────────────────────────────────── */
+
+/* Scroll margin for sticky header */
+.si-section {
+  scroll-margin-top: 80px;
+}
+
+/* Sticky CTA bar */
+.si-sticky-cta {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 999;
+  background: rgba(255, 255, 255, 0.97);
+  border-top: 1px solid #e5e7eb;
+  padding: 10px 16px;
+  display: flex;
+  justify-content: center;
+  box-shadow: 0 -2px 12px rgba(0, 0, 0, 0.08);
+}
+
+.si-btn-sticky {
+  width: 100%;
+  max-width: 420px;
+  text-align: center;
+  font-size: 0.95rem;
+  padding: 12px 20px;
+}
+
+.si-btn-large {
+  font-size: 1rem;
+  padding: 14px 28px;
+}
+
+/* Safe & Verified badge */
+.si-safe-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  background: #f0fdf4;
+  color: #16a34a;
+  border: 1px solid #bbf7d0;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  padding: 5px 12px;
+  white-space: nowrap;
+}
+
+/* Why Trust Us section */
+.si-trust-box {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.si-trust-item {
+  display: flex;
+  gap: 14px;
+  align-items: flex-start;
+}
+
+.si-trust-icon {
+  font-size: 1.4rem;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.si-trust-item strong {
+  display: block;
+  font-size: 0.95rem;
+  margin-bottom: 3px;
+  color: #111;
+}
+
+.si-trust-item p {
+  font-size: 0.85rem;
+  color: #555;
+  margin: 0;
 }
 
 /* Rating */
@@ -152,6 +255,8 @@
   max-width: 860px;
   margin: 0 auto;
   padding: 0 20px;
+  /* FIX: prevent inner content from overflowing */
+  overflow-x: hidden;
 }
 
 /* ─────────────────────────────────────
@@ -254,6 +359,9 @@
   padding: 13px 18px;
   background: #f8f8f8;
   border-right: 1px solid #eee;
+  /* FIX: prevent cells from overflowing */
+  min-width: 0;
+  overflow: hidden;
 }
 
 .si-info-cell:last-child {
@@ -283,6 +391,7 @@
 ───────────────────────────────────── */
 .si-section {
   padding: 36px 0;
+  scroll-margin-top: 80px;
 }
 
 .si-section h2 {
@@ -290,6 +399,7 @@
   font-weight: 800;
   color: #111;
   margin-bottom: 14px;
+  word-break: break-word;
 }
 
 .si-box {
@@ -496,27 +606,128 @@
   line-height: 1.72;
 }
 
+/* ── SCREENSHOTS GRID ─────────────────────────── */
+.si-screenshots-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+  margin-top: 20px;
+}
+
+.si-screenshot-card {
+  background: #f5f5f5;
+  padding: 15px;
+  border-radius: 12px;
+  border: 1px solid #e8e8e8;
+  /* FIX: prevent card from overflowing grid */
+  min-width: 0;
+  overflow: hidden;
+}
+
+.si-screenshot-img {
+  width: 100% !important;
+  height: auto !important;
+  border-radius: 10px;
+  display: block;
+}
+
+.si-screenshot-caption {
+  font-size: 0.85rem;
+  color: #555;
+  margin-top: 10px;
+  line-height: 1.5;
+}
+
+/* ── COMPARISON TABLE ─────────────────────────── */
+.si-compare-table {
+  margin-top: 20px;
+  border-radius: 10px;
+  overflow: hidden;
+  border: 1px solid #eee;
+  /* FIX: table must not overflow its container */
+  width: 100%;
+}
+
+.si-compare-head,
+.si-compare-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  padding: 12px 16px;
+  border-bottom: 1px solid #eee;
+  align-items: center;
+  /* FIX: grid children must not overflow */
+  min-width: 0;
+}
+
+.si-compare-head {
+  background: #6c2bd9;
+  color: #fff;
+  font-weight: 700;
+  font-size: 0.9rem;
+}
+
+.si-compare-row {
+  background: #f9f9f9;
+  font-size: 0.88rem;
+  transition: background 0.2s;
+}
+
+.si-compare-row:last-child {
+  border-bottom: none;
+}
+
+.si-compare-row:hover {
+  background: #f0eafa;
+}
+
+.si-compare-yes {
+  color: #16a34a;
+  font-weight: 700;
+}
+
+.si-compare-no {
+  color: #dc2626;
+}
+
 /* ─────────────────────────────────────
-   RESPONSIVE — MOBILE
+   RESPONSIVE — TABLET
 ───────────────────────────────────── */
 @media (max-width: 768px) {
   .si-hero {
-    flex-direction: column;
-    padding: 36px 20px;
+    flex-direction: column-reverse;       /* image on top, text below */
+    padding: 28px 16px 24px;
     text-align: center;
     min-height: auto;
+    gap: 20px;
   }
 
   .si-hero-left {
     max-width: 100%;
+    width: 100%;
   }
 
   .si-hero-left h1 {
-    font-size: 2rem;
+    font-size: 1.65rem;
+    line-height: 1.2;
+  }
+
+  .si-tagline {
+    font-size: 1rem;
+  }
+
+  .si-desc {
+    max-width: 100%;
+    font-size: 0.88rem;
+  }
+
+  .si-hero-img {
+    display: flex;
+    justify-content: center;
+    width: 100%;
   }
 
   .si-hero-img img {
-    width: 180px !important;
+    width: 150px !important;
     margin: 0 auto;
   }
 
@@ -525,8 +736,11 @@
     justify-content: center;
   }
 
-  .si-desc {
-    max-width: 100%;
+  .si-btn {
+    display: block;
+    text-align: center;
+    width: 100%;
+    padding: 14px 20px;
   }
 
   .si-ss-grid {
@@ -554,10 +768,65 @@
   .si-feat-detail h2 {
     font-size: 1.35rem;
   }
+
+  .si-screenshots-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .si-wrap {
+    padding: 0 14px;
+  }
+
+  /* Sticky CTA — full width on mobile */
+  .si-sticky-cta {
+    padding: 8px 12px;
+  }
+
+  .si-safe-badge {
+    display: none;  /* hide badge on small screens to save space */
+  }
+
+  .si-trust-item {
+    gap: 10px;
+  }
 }
 
+/* ─────────────────────────────────────
+   RESPONSIVE — SMALL MOBILE (≤ 420px)
+───────────────────────────────────── */
 @media (max-width: 420px) {
+  .si-hero-left h1 {
+    font-size: 1.45rem;
+  }
+
+  .si-hero {
+    padding: 22px 14px 20px;
+  }
+
   .si-ss-grid {
     grid-template-columns: repeat(2, 1fr);
+  }
+
+  .si-compare-head,
+  .si-compare-row {
+    grid-template-columns: 1.4fr 1fr 1fr;
+    font-size: 0.75rem;
+    padding: 9px 8px;
+  }
+
+  .si-section h2 {
+    font-size: 1.25rem;
+  }
+
+  .si-box {
+    padding: 16px 16px;
+  }
+
+  .si-steps-box {
+    padding: 18px 16px;
+  }
+
+  .si-faq-a {
+    padding: 0 14px 14px 44px;
   }
 }

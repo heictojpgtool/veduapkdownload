@@ -1,9 +1,15 @@
+/* ═══════════════════════════════════════
+   VEDU APK — navbar.module.css
+   Brand: #6c2bd9 purple · white bg
+═══════════════════════════════════════ */
+
 .navbar {
   position: sticky;
   top: 0;
   z-index: 100;
-  background: #0d0d0d;
-  border-bottom: 1px solid #1e1e1e;
+  background: #ffffff;
+  border-bottom: 1px solid #e5e7eb;
+  box-shadow: 0 1px 8px rgba(0, 0, 0, 0.06);
 }
 
 .navContainer {
@@ -16,58 +22,66 @@
   justify-content: space-between;
 }
 
+/* ── LOGO ──────────────────────────── */
 .navLogo {
   display: flex;
   align-items: center;
-  gap: 8px;
-  font-size: 1.2rem;
-  font-weight: 700;
-  color: #ffffff;
+  gap: 7px;
+  font-size: 1.15rem;
+  font-weight: 900;
+  color: #111111;
   text-decoration: none;
-  letter-spacing: 0.5px;
+  letter-spacing: 0.3px;
+  flex-shrink: 0;
 }
 
 .logoIcon {
-  color: #e63946;
-  font-size: 1rem;
+  color: #6c2bd9;
+  font-size: 0.95rem;
 }
 
+/* ── NAV LINKS ─────────────────────── */
 .navMenu {
   display: flex;
   align-items: center;
-  gap: 4px;
+  gap: 2px;
 }
 
 .navItem {
-  color: #cccccc;
+  color: #444444;
   text-decoration: none;
   font-size: 0.9rem;
+  font-weight: 500;
   padding: 6px 12px;
-  border-radius: 6px;
+  border-radius: 7px;
   transition: color 0.2s, background 0.2s;
 }
 
 .navItem:hover {
-  color: #ffffff;
-  background: #1a1a1a;
+  color: #6c2bd9;
+  background: #f3eeff;
 }
 
+/* Download button */
 .navItemBtn {
   color: #ffffff;
   text-decoration: none;
-  font-size: 0.9rem;
-  font-weight: 600;
-  padding: 7px 16px;
-  border-radius: 6px;
-  background: #e63946;
+  font-size: 0.88rem;
+  font-weight: 700;
+  padding: 8px 16px;
+  border-radius: 8px;
+  background: #6c2bd9;
   margin-left: 8px;
-  transition: background 0.2s;
+  transition: background 0.2s, transform 0.1s;
+  white-space: nowrap;
 }
 
 .navItemBtn:hover {
-  background: #c1121f;
+  background: #5a1fc7;
+  transform: translateY(-1px);
 }
 
+/* ── HAMBURGER ─────────────────────── */
 .hamburger {
   display: none;
   flex-direction: column;
@@ -75,18 +89,31 @@
   background: none;
   border: none;
   cursor: pointer;
-  padding: 4px;
+  padding: 6px 4px;
 }
 
 .bar {
   display: block;
   width: 24px;
   height: 2px;
-  background: #ffffff;
+  background: #333333;
   border-radius: 2px;
-  transition: all 0.3s;
+  transition: all 0.28s ease;
 }
 
+/* Hamburger → X animation */
+.hamburgerOpen .bar:nth-child(1) {
+  transform: translateY(7px) rotate(45deg);
+}
+.hamburgerOpen .bar:nth-child(2) {
+  opacity: 0;
+  transform: scaleX(0);
+}
+.hamburgerOpen .bar:nth-child(3) {
+  transform: translateY(-7px) rotate(-45deg);
+}
+
+/* ── MOBILE ────────────────────────── */
 @media (max-width: 768px) {
   .hamburger {
     display: flex;
@@ -95,31 +122,37 @@
   .navMenu {
     display: none;
     flex-direction: column;
-    align-items: flex-start;
+    align-items: stretch;
     gap: 2px;
     position: absolute;
     top: 60px;
     left: 0;
     right: 0;
-    background: #0d0d0d;
-    border-top: 1px solid #1e1e1e;
-    padding: 12px 20px 16px;
+    background: #ffffff;
+    border-top: 1px solid #e5e7eb;
+    border-bottom: 1px solid #e5e7eb;
+    padding: 10px 16px 14px;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
   }
 
   .navMenu.active {
     display: flex;
   }
 
-  .navItem,
-  .navItemBtn {
-    width: 100%;
+  .navItem {
     font-size: 0.95rem;
-    padding: 10px 14px;
+    padding: 11px 14px;
+    border-radius: 8px;
+    width: 100%;
   }
 
   .navItemBtn {
     margin-left: 0;
     margin-top: 6px;
     text-align: center;
+    padding: 12px 14px;
+    font-size: 0.95rem;
+    border-radius: 8px;
+    width: 100%;
   }
 }

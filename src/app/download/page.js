@@ -1,13 +1,18 @@
 "use client";
 
 import "./download.css";
-import Image from "next/image";
 import Link from "next/link";
 import { useState, useEffect } from "react";
 
+const COUNTDOWN_SEC = 15;
+const APK_FILE      = "/vedu-app.apk";
+const APK_NAME      = "vedu-app.apk";
+const APK_SIZE      = "28 MB";
+const APK_VERSION   = "Latest 2026";
+
 export default function DownloadPage() {
-  const [countdown, setCountdown] = useState(15);
-  const [ready, setReady] = useState(false);
+  const [countdown, setCountdown] = useState(COUNTDOWN_SEC);
+  const [ready, setReady]         = useState(false);
 
   useEffect(() => {
     if (countdown <= 0) { setReady(true); return; }
@@ -15,76 +20,166 @@ export default function DownloadPage() {
     return () => clearTimeout(t);
   }, [countdown]);
 
+  const progress = ((COUNTDOWN_SEC - countdown) / COUNTDOWN_SEC) * 100;
+
   return (
     <div className="dl-page">
 
-
-
-      {/* MAIN CARD */}
-      <main className="dl-main">
-        <div className="dl-card">
-
-          {/* App Row */}
-          <div className="dl-app-row">
+      {/* ── HERO BAND ───────────────────────────── */}
+      <section className="dl-hero">
+        <div className="dl-hero-inner">
+          <div className="dl-app-info">
+            <div className="dl-icon-wrap">
+              <span className="dl-icon-letter">V</span>
+            </div>
             <div>
-              <h1>Stream India APK</h1>
-              <p className="dl-sub">All Movie, Cricket &amp; TV Show</p>
-              <div className="dl-badges">
-                <span>⚡ Latest 2025</span>
-                <span>💾 25 MB</span>
-                <span>🤖 Android 5.0+</span>
-                <span className="green">🆓 Free</span>
+              <h1 className="dl-app-name">Vedu APK</h1>
+              <p className="dl-app-sub">Free Streaming &amp; Video Player for Android</p>
+              <div className="dl-meta-row">
+                <span className="dl-chip">⚡ {APK_VERSION}</span>
+                <span className="dl-chip">💾 {APK_SIZE}</span>
+                <span className="dl-chip">🤖 Android 5.0+</span>
+                <span className="dl-chip dl-chip-green">🆓 Free</span>
               </div>
             </div>
           </div>
+        </div>
+      </section>
 
-          <div className="dl-divider" />
+      {/* ── MAIN CONTENT ────────────────────────── */}
+      <main className="dl-main">
 
-          {/* Countdown / Button */}
+        {/* ── DOWNLOAD CARD ───────────────────── */}
+        <div className="dl-card">
+          <h2 className="dl-card-title">
+            {ready ? "✅ Your Download is Ready!" : "⏳ Preparing Your Download…"}
+          </h2>
+
           {!ready ? (
-            <div className="dl-countdown">
-              <p>Download will be ready in</p>
-              <div className="dl-timer">{countdown}</div>
-              <div className="dl-progress"><div className="dl-fill" style={{ width: `${((15 - countdown) / 15) * 100}%` }} /></div>
-              <button className="dl-btn disabled" disabled>⏳ Please Wait... ({countdown}s)</button>
-            </div>
+            <>
+              <p className="dl-wait-txt">
+                Please wait while we verify the file for safety.
+              </p>
+              <div className="dl-timer-ring">
+                <svg viewBox="0 0 80 80" className="dl-ring-svg">
+                  <circle cx="40" cy="40" r="34" className="dl-ring-bg" />
+                  <circle
+                    cx="40" cy="40" r="34"
+                    className="dl-ring-fill"
+                    style={{
+                      strokeDashoffset: `${213.6 - (213.6 * progress) / 100}`,
+                    }}
+                  />
+                </svg>
+                <span className="dl-timer-num">{countdown}</span>
+              </div>
+              <div className="dl-progress-bar">
+                <div className="dl-progress-fill" style={{ width: `${progress}%` }} />
+              </div>
+              <button className="dl-btn dl-btn-disabled" disabled>
+                ⏳ Please Wait… ({countdown}s)
+              </button>
+            </>
           ) : (
-            <div className="dl-countdown">
-              <p className="ready-txt">✅ Your download is ready!</p>
-              <a href="/stream-india.apk" className="dl-btn active" download>
-                ⬇ Download Stream India APK Now
+            <>
+              <p className="dl-ready-txt">
+                File verified ✔ — tap the button below to start your download.
+              </p>
+              <a
+                href={APK_FILE}
+                className="dl-btn dl-btn-active"
+                download={APK_NAME}
+              >
+                ⬇ Download Vedu APK Now
               </a>
-              <p className="dl-fileinfo">stream-india.apk · 25 MB · Free</p>
-            </div>
+              <p className="dl-fileinfo">{APK_NAME} · {APK_SIZE} · Free · Verified Safe</p>
+            </>
           )}
 
-          <div className="dl-divider" />
-
-          {/* Install Steps */}
-          <div className="dl-steps">
-            <h2>How to Install</h2>
-            <ol>
-              <li><span>1</span> Click Download &amp; wait for APK to save.</li>
-              <li><span>2</span> Settings → Security → Enable <strong>Unknown Sources</strong>.</li>
-              <li><span>3</span> Open Downloads folder → tap the APK file.</li>
-              <li><span>4</span> Tap <strong>Install</strong> and wait a few seconds.</li>
-              <li><span>5</span> Open Stream India and enjoy free streaming! 🎉</li>
-            </ol>
+          {/* Trust row */}
+          <div className="dl-trust-row">
+            <span>🛡 Scanned &amp; Safe</span>
+            <span>✔ No Malware</span>
+            <span>✔ No Hidden Fees</span>
+            <span>✔ Original File</span>
           </div>
-
-          <div className="dl-divider" />
-
-          {/* Security */}
-          <div className="dl-security">
-            <span>🛡 Security Verified</span>
-            <span>✔ CM Security</span>
-            <span>✔ Lookout</span>
-            <span>✔ McAfee</span>
-          </div>
-
         </div>
-      </main>
 
+        {/* ── APP INFO GRID ────────────────────── */}
+        <div className="dl-info-grid">
+          {[
+            { label: "App Name",     value: "Vedu APK" },
+            { label: "Version",      value: APK_VERSION },
+            { label: "Size",         value: APK_SIZE },
+            { label: "Price",        value: "Free" },
+            { label: "Android",      value: "5.0+" },
+            { label: "Category",     value: "Entertainment" },
+            { label: "Last Updated", value: "2026" },
+            { label: "Downloads",    value: "1M+" },
+          ].map(({ label, value }) => (
+            <div className="dl-info-cell" key={label}>
+              <span className="dl-info-lbl">{label}</span>
+              <span className="dl-info-val">{value}</span>
+            </div>
+          ))}
+        </div>
+
+        {/* ── INSTALL STEPS ────────────────────── */}
+        <div className="dl-steps-card">
+          <h2>How to Install Vedu APK</h2>
+          <ol className="dl-steps-list">
+            {[
+              <>Tap <strong>Download</strong> above and wait for the APK file to save on your device.</>,
+              <>Go to <strong>Settings → Security</strong> and enable <strong>Unknown Sources</strong> (or Install Unknown Apps).</>,
+              <>Open your <strong>Downloads folder</strong> or notification bar and tap the Vedu APK file.</>,
+              <>Tap <strong>Install</strong> and wait a few seconds for installation to finish.</>,
+              <>Open <strong>Vedu</strong> from your home screen — no login needed, start watching! 🎉</>,
+            ].map((step, i) => (
+              <li key={i}>
+                <span className="dl-step-num">{i + 1}</span>
+                <span>{step}</span>
+              </li>
+            ))}
+          </ol>
+
+          <div className="dl-install-note">
+            <strong>⚠ Seeing a warning?</strong> Android shows a standard alert for all APKs
+            installed outside the Play Store. This does not mean the file is unsafe —
+            it is a default system message. Tap <em>Install Anyway</em> to continue.
+          </div>
+        </div>
+
+        {/* ── FEATURES QUICK LIST ──────────────── */}
+        <div className="dl-features-card">
+          <h2>What You Get with Vedu APK</h2>
+          <div className="dl-feat-grid">
+            {[
+              "Free movies & web series",
+              "4K / HD / Ultra HD quality",
+              "No login or account needed",
+              "Offline download support",
+              "Built-in video player",
+              "Subtitle support",
+              "Gesture controls",
+              "Dark mode",
+              "Works on Android 5.0+",
+              "Auto quality adjustment",
+              "Minimal ads",
+              "Picture-in-picture mode",
+            ].map((f, i) => (
+              <div className="dl-feat-item" key={i}>
+                <span className="dl-feat-check">✓</span> {f}
+              </div>
+            ))}
+          </div>
+        </div>
+
+        {/* ── BACK LINK ───────────────────────── */}
+        <div className="dl-back-row">
+          <Link href="/" className="dl-back-link">← Back to Vedu APK Home</Link>
+        </div>
+
+      </main>
     </div>
   );
 }

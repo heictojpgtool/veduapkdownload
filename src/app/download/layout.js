@@ -1,18 +1,51 @@
 export const metadata = {
-    title: "Stream India APK Download – Free Cricket App For Android 2026",
-    description: "Download Stream India APK free for Android. Watch IPL 2026, ICC & PSL cricket matches in HD. 25MB only, Android 5.0+, no subscription needed. Safe & verified.",
+    title: "Vedu APK APP Download Latest Version For Android 2026",
+    description:
+        "Download Vedu APK free for Android. Watch Bollywood, Hollywood, South Indian & Punjabi movies in HD & 4K. No login, no subscription, ad-free. Android 5.0+. Safe & verified.",
+    keywords: [
+        "Vedu APK download",
+        "Vedu APK 2026",
+        "Vedu movies app Android",
+        "free movie streaming app",
+        "Bollywood movies app",
+        "Hollywood movies APK",
+        "South Indian movies app",
+        "HD movie streaming app",
+        "Vedu free download",
+        "watch movies free Android",
+        "Vedu web series app",
+        "ad-free streaming app",
+    ],
+    alternates: {
+        canonical: "https://veduapkdownloads.com/download",
+    },
+    robots: {
+        index: true,
+        follow: true,
+    },
     openGraph: {
-        title: "Stream India APK Download – Free Cricket App For Android 2026",
-        description: "Get Stream India APK – 25MB, Android 5.0+, 100% free. Watch IPL 2026, ICC & PSL matches in HD. No login, no subscription. CM Security & McAfee verified. Download now.",
-        url: "https://streamindia.site/download",
+        title: "Vedu APK APP Download Latest Version For Android 2026",
+        description:
+            "Get Vedu APK – 100% free, no login required. Stream 50,000+ movies, web series & TV shows in HD & 4K. Bollywood, Hollywood, South Indian, Punjabi & more. Ad-free. Download now.",
+        url: "https://veduapkdownloads.com/download",
+        siteName: "Vedu APK Downloads",
+        type: "website",
+        locale: "en_US",
         images: [
             {
-                url: "https://streamindia.site/images/stream-india-apk-download.jpg",
+                url: "https://veduapkdownloads.com/images/vedu-apk-download.jpg",
                 width: 1200,
                 height: 630,
-                alt: "Stream India APK Download Free – Android Cricket App 2026",
+                alt: "Vedu APK Download Free – Movies & Streaming App For Android 2026",
             },
         ],
+    },
+    twitter: {
+        card: "summary_large_image",
+        title: "Vedu APK Download – Free Movies & Streaming App For Android 2026",
+        description:
+            "Download Vedu APK free. Watch 50,000+ Bollywood, Hollywood & South Indian movies in HD & 4K. No login, no ads, no subscription. Android 5.0+.",
+        images: ["https://veduapkdownloads.com/images/vedu-apk-download.jpg"],
     },
 };
 

@@ -7,11 +7,11 @@ export default function PrivacyPolicy() {
     <div className={styles.legalPage}>
       <div className={styles.legalContainer}>
         <h1>Privacy Policy</h1>
-        <p className={styles.lastUpdated}>Last Updated: January 2025</p>
+        <span className={styles.lastUpdated}>Last Updated: January 2025</span>
 
         <div className={styles.legalBox}>
           <p>
-            Welcome to Stream India. This Privacy Policy explains how we collect, use, and
+            Welcome to Vedu APK. This Privacy Policy explains how we collect, use, and
             protect your information when you visit our website. By using our website, you
             agree to the terms described in this policy.
           </p>

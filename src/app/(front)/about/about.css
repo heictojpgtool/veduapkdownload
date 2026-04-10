@@ -1,0 +1,321 @@
+/* ═══════════════════════════════════════
+   VEDU APK — about.css
+   Matches home.css brand: #6c2bd9 purple
+═══════════════════════════════════════ */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.ab-page {
+  font-family: "Inter", "Segoe UI", system-ui, sans-serif;
+  color: #1a1a1a;
+  background: #ffffff;
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+/* ─────────────────────────────────────
+   HERO
+───────────────────────────────────── */
+.ab-hero {
+  background: #eef0fb;
+  padding: 44px 20px 36px;
+  border-bottom: 1px solid #e0e3f5;
+}
+
+.ab-hero-inner {
+  max-width: 860px;
+  margin: 0 auto;
+}
+
+.ab-breadcrumb {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.82rem;
+  color: #888;
+  margin-bottom: 14px;
+}
+
+.ab-breadcrumb a {
+  color: #6c2bd9;
+  text-decoration: none;
+}
+
+.ab-breadcrumb a:hover {
+  text-decoration: underline;
+}
+
+.ab-hero h1 {
+  font-size: 2.2rem;
+  font-weight: 900;
+  color: #111;
+  line-height: 1.1;
+  margin-bottom: 10px;
+  word-break: break-word;
+}
+
+.ab-hero-sub {
+  font-size: 1rem;
+  color: #555;
+  max-width: 560px;
+  line-height: 1.7;
+}
+
+/* ─────────────────────────────────────
+   LAYOUT
+───────────────────────────────────── */
+.ab-wrap {
+  max-width: 860px;
+  margin: 0 auto;
+  padding: 0 20px 60px;
+}
+
+/* ─────────────────────────────────────
+   SECTIONS
+───────────────────────────────────── */
+.ab-section {
+  padding: 36px 0;
+  border-bottom: 1px solid #f0f0f0;
+  scroll-margin-top: 80px;
+}
+
+.ab-section:last-child {
+  border-bottom: none;
+}
+
+.ab-section h2 {
+  font-size: 1.6rem;
+  font-weight: 800;
+  color: #111;
+  margin-bottom: 16px;
+  word-break: break-word;
+}
+
+/* ─────────────────────────────────────
+   BOX (same as home .si-box)
+───────────────────────────────────── */
+.ab-box {
+  background: #f5f5f5;
+  border-radius: 12px;
+  padding: 20px 24px;
+}
+
+.ab-box p {
+  font-size: 0.93rem;
+  color: #444;
+  line-height: 1.8;
+  margin-bottom: 12px;
+}
+
+.ab-box p:last-child {
+  margin-bottom: 0;
+}
+
+/* ─────────────────────────────────────
+   TRUST CARDS GRID
+───────────────────────────────────── */
+.ab-trust-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+}
+
+.ab-trust-card {
+  display: flex;
+  gap: 14px;
+  align-items: flex-start;
+  background: #f5f5f5;
+  border-radius: 12px;
+  padding: 18px 20px;
+}
+
+.ab-trust-icon {
+  font-size: 1.5rem;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.ab-trust-card strong {
+  display: block;
+  font-size: 0.93rem;
+  font-weight: 700;
+  color: #111;
+  margin-bottom: 5px;
+}
+
+.ab-trust-card p {
+  font-size: 0.85rem;
+  color: #555;
+  line-height: 1.65;
+  margin: 0;
+}
+
+/* ─────────────────────────────────────
+   WHAT WE COVER GRID
+───────────────────────────────────── */
+.ab-cover-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 12px;
+}
+
+.ab-cover-card {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  background: #f5f5f5;
+  border-radius: 12px;
+  padding: 18px 18px;
+}
+
+.ab-cover-icon {
+  font-size: 1.4rem;
+}
+
+.ab-cover-card strong {
+  font-size: 0.88rem;
+  font-weight: 700;
+  color: #111;
+}
+
+.ab-cover-card p {
+  font-size: 0.83rem;
+  color: #666;
+  line-height: 1.55;
+  margin: 0;
+}
+
+/* ─────────────────────────────────────
+   DISCLAIMER BOX
+───────────────────────────────────── */
+.ab-disclaimer-box {
+  background: #fffbeb;
+  border: 1px solid #fde68a;
+  border-radius: 12px;
+  padding: 20px 24px;
+}
+
+.ab-disclaimer-box p {
+  font-size: 0.9rem;
+  color: #555;
+  line-height: 1.8;
+  margin-bottom: 12px;
+}
+
+.ab-disclaimer-box p:last-child {
+  margin-bottom: 0;
+}
+
+.ab-disclaimer-box a {
+  color: #6c2bd9;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.ab-disclaimer-box a:hover {
+  text-decoration: underline;
+}
+
+/* ─────────────────────────────────────
+   CTA BUTTONS
+───────────────────────────────────── */
+.ab-cta-row {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-top: 16px;
+}
+
+.ab-btn {
+  display: inline-block;
+  background: #6c2bd9;
+  color: #fff;
+  font-size: 0.95rem;
+  font-weight: 700;
+  padding: 12px 24px;
+  border-radius: 8px;
+  text-decoration: none;
+  transition: background 0.2s, transform 0.1s;
+}
+
+.ab-btn:hover {
+  background: #5a1fc7;
+  transform: translateY(-1px);
+}
+
+.ab-btn-outline {
+  display: inline-block;
+  background: transparent;
+  color: #6c2bd9;
+  font-size: 0.95rem;
+  font-weight: 700;
+  padding: 11px 24px;
+  border-radius: 8px;
+  border: 2px solid #6c2bd9;
+  text-decoration: none;
+  transition: background 0.2s, color 0.2s;
+}
+
+.ab-btn-outline:hover {
+  background: #6c2bd9;
+  color: #fff;
+}
+
+/* ─────────────────────────────────────
+   RESPONSIVE
+───────────────────────────────────── */
+@media (max-width: 640px) {
+  .ab-hero {
+    padding: 28px 16px 24px;
+  }
+
+  .ab-hero h1 {
+    font-size: 1.65rem;
+  }
+
+  .ab-wrap {
+    padding: 0 14px 48px;
+  }
+
+  .ab-section h2 {
+    font-size: 1.3rem;
+  }
+
+  .ab-trust-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .ab-cover-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .ab-box {
+    padding: 16px 16px;
+  }
+
+  .ab-cta-row {
+    flex-direction: column;
+  }
+
+  .ab-btn,
+  .ab-btn-outline {
+    text-align: center;
+    width: 100%;
+  }
+}
+
+@media (max-width: 400px) {
+  .ab-hero h1 {
+    font-size: 1.4rem;
+  }
+
+  .ab-cover-grid {
+    grid-template-columns: 1fr;
+  }
+}

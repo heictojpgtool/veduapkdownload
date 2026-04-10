@@ -1,0 +1,454 @@
+/* ═══════════════════════════════════════
+   VEDU APK — best-streaming-apps.css
+   Matches home.css brand: #6c2bd9 purple
+═══════════════════════════════════════ */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.bsa-page {
+  font-family: "Inter", "Segoe UI", system-ui, sans-serif;
+  color: #1a1a1a;
+  background: #ffffff;
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+/* ─────────────────────────────────────
+   HERO
+───────────────────────────────────── */
+.bsa-hero {
+  background: #eef0fb;
+  padding: 44px 20px 36px;
+  border-bottom: 1px solid #e0e3f5;
+}
+
+.bsa-hero-inner {
+  max-width: 860px;
+  margin: 0 auto;
+}
+
+.bsa-breadcrumb {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.82rem;
+  color: #888;
+  margin-bottom: 14px;
+}
+
+.bsa-breadcrumb a {
+  color: #6c2bd9;
+  text-decoration: none;
+}
+
+.bsa-breadcrumb a:hover {
+  text-decoration: underline;
+}
+
+.bsa-hero h1 {
+  font-size: 2.2rem;
+  font-weight: 900;
+  color: #111;
+  line-height: 1.1;
+  margin-bottom: 10px;
+  word-break: break-word;
+}
+
+.bsa-hero-sub {
+  font-size: 1rem;
+  color: #555;
+  max-width: 580px;
+  line-height: 1.7;
+  margin-bottom: 12px;
+}
+
+.bsa-meta {
+  font-size: 0.8rem;
+  color: #888;
+}
+
+/* ─────────────────────────────────────
+   LAYOUT
+───────────────────────────────────── */
+.bsa-wrap {
+  max-width: 860px;
+  margin: 0 auto;
+  padding: 0 20px 60px;
+}
+
+/* ─────────────────────────────────────
+   TOC
+───────────────────────────────────── */
+.bsa-toc-section {
+  padding: 32px 0 0;
+}
+
+.bsa-toc-card {
+  border: 1px solid #ddd;
+  border-radius: 12px;
+  overflow: hidden;
+  margin-bottom: 8px;
+}
+
+.bsa-toc-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 14px 22px;
+  background: #fff;
+  cursor: pointer;
+  border-bottom: 1px solid #eee;
+  user-select: none;
+}
+
+.bsa-toc-head h2 {
+  font-size: 1.05rem;
+  font-weight: 800;
+  color: #111;
+}
+
+.bsa-toc-head span {
+  color: #6c2bd9;
+  font-size: 0.85rem;
+  font-weight: 600;
+  text-decoration: underline;
+}
+
+.bsa-toc-body {
+  list-style: none;
+  padding: 6px 0;
+}
+
+.bsa-toc-body li {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 9px 22px;
+  border-bottom: 1px solid #f4f4f4;
+}
+
+.bsa-toc-body li:last-child { border-bottom: none; }
+
+.bsa-toc-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #6c2bd9;
+  flex-shrink: 0;
+}
+
+.bsa-toc-body a {
+  font-size: 0.9rem;
+  color: #333;
+  font-weight: 500;
+  text-decoration: none;
+}
+
+.bsa-toc-body a:hover { color: #6c2bd9; }
+
+/* ─────────────────────────────────────
+   SECTIONS
+───────────────────────────────────── */
+.bsa-section {
+  padding: 36px 0;
+  border-bottom: 1px solid #f0f0f0;
+  scroll-margin-top: 80px;
+}
+
+.bsa-section:last-child { border-bottom: none; }
+
+.bsa-section h2 {
+  font-size: 1.6rem;
+  font-weight: 800;
+  color: #111;
+  margin-bottom: 14px;
+  word-break: break-word;
+}
+
+.bsa-box {
+  background: #f5f5f5;
+  border-radius: 12px;
+  padding: 20px 24px;
+  margin-bottom: 14px;
+}
+
+.bsa-box p {
+  font-size: 0.93rem;
+  color: #444;
+  line-height: 1.8;
+  margin-bottom: 12px;
+}
+
+.bsa-box p:last-child { margin-bottom: 0; }
+
+/* ─────────────────────────────────────
+   APP CARD
+───────────────────────────────────── */
+.bsa-app-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 14px;
+  flex-wrap: wrap;
+}
+
+.bsa-rank-badge {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 9px;
+  background: #6c2bd9;
+  color: #fff;
+  font-size: 0.85rem;
+  font-weight: 800;
+  flex-shrink: 0;
+}
+
+.bsa-app-header h2 {
+  font-size: 1.5rem;
+  margin-bottom: 0;
+  flex: 1;
+}
+
+.bsa-app-tag {
+  font-size: 0.78rem;
+  font-weight: 700;
+  padding: 4px 12px;
+  border-radius: 20px;
+  border: 1px solid;
+  white-space: nowrap;
+}
+
+/* Pros / Cons */
+.bsa-pros-cons {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+  margin-bottom: 14px;
+}
+
+.bsa-pros,
+.bsa-cons {
+  background: #f5f5f5;
+  border-radius: 12px;
+  padding: 16px 18px;
+}
+
+.bsa-pros h3,
+.bsa-cons h3 {
+  font-size: 0.88rem;
+  font-weight: 700;
+  color: #111;
+  margin-bottom: 10px;
+}
+
+.bsa-pros ul,
+.bsa-cons ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.bsa-pros ul li,
+.bsa-cons ul li {
+  font-size: 0.86rem;
+  color: #444;
+  line-height: 1.5;
+  padding-left: 4px;
+}
+
+/* Verdict */
+.bsa-verdict-row {
+  background: #f3eeff;
+  border-left: 3px solid #6c2bd9;
+  border-radius: 0 8px 8px 0;
+  padding: 12px 16px;
+  margin-bottom: 14px;
+  display: flex;
+  gap: 8px;
+  align-items: flex-start;
+  flex-wrap: wrap;
+}
+
+.bsa-verdict-label {
+  font-size: 0.85rem;
+  font-weight: 800;
+  color: #6c2bd9;
+  flex-shrink: 0;
+}
+
+.bsa-verdict-text {
+  font-size: 0.88rem;
+  color: #333;
+  line-height: 1.6;
+}
+
+/* Download button */
+.bsa-dl-btn {
+  display: inline-block;
+  background: #6c2bd9;
+  color: #fff;
+  font-size: 0.95rem;
+  font-weight: 700;
+  padding: 12px 24px;
+  border-radius: 8px;
+  text-decoration: none;
+  transition: background 0.2s, transform 0.1s;
+}
+
+.bsa-dl-btn:hover {
+  background: #5a1fc7;
+  transform: translateY(-1px);
+}
+
+/* ─────────────────────────────────────
+   COMPARISON TABLE
+───────────────────────────────────── */
+.bsa-compare-wrap {
+  overflow-x: auto;
+  border-radius: 12px;
+  border: 1px solid #eee;
+  margin-top: 14px;
+}
+
+.bsa-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.88rem;
+  min-width: 540px;
+}
+
+.bsa-table thead tr {
+  background: #6c2bd9;
+  color: #fff;
+}
+
+.bsa-table thead th {
+  padding: 12px 14px;
+  text-align: left;
+  font-weight: 700;
+  font-size: 0.85rem;
+}
+
+.bsa-table tbody tr {
+  border-bottom: 1px solid #f0f0f0;
+  background: #fafafa;
+  transition: background 0.15s;
+}
+
+.bsa-table tbody tr:hover { background: #f3eeff; }
+.bsa-table tbody tr:last-child { border-bottom: none; }
+
+.bsa-table td {
+  padding: 11px 14px;
+  color: #444;
+}
+
+.bsa-feat-cell {
+  font-weight: 600;
+  color: #222 !important;
+}
+
+.bsa-yes { color: #16a34a !important; font-weight: 700; font-size: 1rem; }
+.bsa-no  { color: #dc2626 !important; font-size: 1rem; }
+
+/* ─────────────────────────────────────
+   FAQ
+───────────────────────────────────── */
+.bsa-faq-item {
+  background: #f5f5f5;
+  border-radius: 10px;
+  margin-bottom: 10px;
+  overflow: hidden;
+  cursor: pointer;
+  transition: background 0.15s;
+}
+
+.bsa-faq-item:hover,
+.bsa-faq-item.open { background: #ece8f8; }
+
+.bsa-faq-q {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 16px 20px;
+}
+
+.bsa-faq-icon {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: #6c2bd9;
+  width: 22px;
+  text-align: center;
+  flex-shrink: 0;
+}
+
+.bsa-faq-q p {
+  font-size: 0.92rem;
+  font-weight: 600;
+  color: #222;
+}
+
+.bsa-faq-a {
+  padding: 0 20px 16px 54px;
+}
+
+.bsa-faq-a p {
+  font-size: 0.88rem;
+  color: #555;
+  line-height: 1.72;
+}
+
+/* ─────────────────────────────────────
+   BACK LINK
+───────────────────────────────────── */
+.bsa-back-row {
+  padding: 28px 0 0;
+  text-align: center;
+}
+
+.bsa-back-link {
+  font-size: 0.88rem;
+  color: #6c2bd9;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.bsa-back-link:hover { text-decoration: underline; }
+
+/* ─────────────────────────────────────
+   RESPONSIVE
+───────────────────────────────────── */
+@media (max-width: 640px) {
+  .bsa-hero h1 { font-size: 1.6rem; }
+  .bsa-hero { padding: 30px 16px 24px; }
+  .bsa-wrap { padding: 0 14px 48px; }
+
+  .bsa-pros-cons { grid-template-columns: 1fr; }
+
+  .bsa-section h2 { font-size: 1.3rem; }
+
+  .bsa-app-header h2 { font-size: 1.3rem; }
+
+  .bsa-dl-btn {
+    display: block;
+    text-align: center;
+    width: 100%;
+  }
+
+  .bsa-box { padding: 16px 16px; }
+}
+
+@media (max-width: 400px) {
+  .bsa-hero h1 { font-size: 1.4rem; }
+  .bsa-rank-badge { width: 30px; height: 30px; font-size: 0.78rem; }
+}

@@ -7,32 +7,39 @@ import styles from "./navbar.module.css";
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
 
-  const toggleMenu = () => {
-    setIsOpen(!isOpen);
-  };
-
   return (
     <nav className={styles.navbar}>
       <div className={styles.navContainer}>
+
+        {/* LOGO */}
         <Link href="/" className={styles.navLogo}>
           <span className={styles.logoIcon}>▶</span>
-          Stream India
+          Vedu APK
         </Link>
 
-        <button className={styles.hamburger} onClick={toggleMenu}>
-          <span className={styles.bar}></span>
-          <span className={styles.bar}></span>
-          <span className={styles.bar}></span>
+        {/* HAMBURGER */}
+        <button
+          className={`${styles.hamburger} ${isOpen ? styles.hamburgerOpen : ""}`}
+          onClick={() => setIsOpen(!isOpen)}
+          aria-label="Toggle menu"
+        >
+          <span className={styles.bar} />
+          <span className={styles.bar} />
+          <span className={styles.bar} />
         </button>
 
+        {/* MENU */}
         <div className={`${styles.navMenu} ${isOpen ? styles.active : ""}`}>
-          <Link href="/" className={styles.navItem}>Home</Link>
-          <Link href="#about" className={styles.navItem}>About</Link>
-          <Link href="#features" className={styles.navItem}>Features</Link>
-          <Link href="#screenshots" className={styles.navItem}>Screenshots</Link>
-          <Link href="#faqs" className={styles.navItem}>FAQs</Link>
-          <Link href="download" className={styles.navItemBtn}>Download APK</Link>
+          <Link href="/"            className={styles.navItem} onClick={() => setIsOpen(false)}>Home</Link>
+          <Link href="/#about"      className={styles.navItem} onClick={() => setIsOpen(false)}>About</Link>
+          <Link href="/#features"   className={styles.navItem} onClick={() => setIsOpen(false)}>Features</Link>
+          <Link href="/#screenshots"className={styles.navItem} onClick={() => setIsOpen(false)}>Screenshots</Link>
+          <Link href="/#faqs"       className={styles.navItem} onClick={() => setIsOpen(false)}>FAQs</Link>
+          <Link href="/download"    className={styles.navItemBtn} onClick={() => setIsOpen(false)}>
+            ⬇ Download APK
+          </Link>
         </div>
+
       </div>
     </nav>
   );

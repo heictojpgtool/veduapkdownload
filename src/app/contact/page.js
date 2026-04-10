@@ -1,16 +1,14 @@
 "use client";
 
 import { useState } from "react";
-import styles from "./legal.module.css";
-import contactStyles from "./contact.module.css";
+import styles from "../privacy/legal.module.css";
 
-
-export default function ContactUs() {
-  const [formData, setFormData] = useState({ name: "", email: "", message: "" });
+export default function Contact() {
+  const [form, setForm] = useState({ name: "", email: "", subject: "", message: "" });
   const [submitted, setSubmitted] = useState(false);
 
   const handleChange = (e) => {
-    setFormData({ ...formData, [e.target.name]: e.target.value });
+    setForm({ ...form, [e.target.name]: e.target.value });
   };
 
   const handleSubmit = (e) => {
@@ -22,87 +20,116 @@ export default function ContactUs() {
     <div className={styles.legalPage}>
       <div className={styles.legalContainer}>
         <h1>Contact Us</h1>
-        <p className={styles.lastUpdated}>We&apos;d love to hear from you</p>
+        <span className={styles.lastUpdated}>We usually respond within 24–48 hours</span>
 
         <div className={styles.legalBox}>
           <p>
-            Have a question, suggestion, or concern about Stream India? Feel free to
-            reach out to us using the form below. We typically respond within 24–48 hours.
+            Have a question, suggestion, or concern about Vedu APK? We are happy to hear
+            from you. Fill out the form below or reach us through the details provided
+            and we will get back to you as soon as possible.
           </p>
         </div>
 
-        <div className={contactStyles.contactGrid}>
+        <div className={styles.contactGrid}>
 
-          <div className={contactStyles.contactInfo}>
-            <div className={contactStyles.infoCard}>
-              <span className={contactStyles.infoIcon}>📧</span>
+          {/* LEFT — INFO CARDS */}
+          <div className={styles.contactInfo}>
+            <div className={styles.infoCard}>
+              <span className={styles.infoIcon}>📧</span>
               <div>
                 <h3>Email</h3>
-                <p>support@streamindia.app</p>
+                <p>support@veduapk.com</p>
               </div>
             </div>
-            <div className={contactStyles.infoCard}>
-              <span className={contactStyles.infoIcon}>⏱</span>
+
+            <div className={styles.infoCard}>
+              <span className={styles.infoIcon}>⏱️</span>
               <div>
                 <h3>Response Time</h3>
-                <p>Within 24–48 hours</p>
+                <p>Within 24–48 hours on business days</p>
               </div>
             </div>
-            <div className={contactStyles.infoCard}>
-              <span className={contactStyles.infoIcon}>🌐</span>
+
+            <div className={styles.infoCard}>
+              <span className={styles.infoIcon}>🌐</span>
               <div>
                 <h3>Website</h3>
-                <p>streamindia.app</p>
+                <p>veduapkdownload.com</p>
+              </div>
+            </div>
+
+            <div className={styles.infoCard}>
+              <span className={styles.infoIcon}>📱</span>
+              <div>
+                <h3>Support</h3>
+                <p>APK downloads, install issues, general queries</p>
               </div>
             </div>
           </div>
 
-          <div className={contactStyles.contactForm}>
+          {/* RIGHT — FORM */}
+          <div className={styles.contactForm}>
             {submitted ? (
-              <div className={contactStyles.successMsg}>
+              <div className={styles.successMsg}>
                 <span>✅</span>
                 <h3>Message Sent!</h3>
-                <p>Thank you for reaching out. We will get back to you shortly.</p>
+                <p>Thank you for reaching out. We will get back to you within 24–48 hours.</p>
               </div>
             ) : (
               <form onSubmit={handleSubmit}>
-                <div className={contactStyles.formGroup}>
+                <div className={styles.formGroup}>
                   <label htmlFor="name">Your Name</label>
                   <input
-                    type="text"
                     id="name"
                     name="name"
+                    type="text"
                     placeholder="Enter your name"
-                    value={formData.name}
+                    value={form.name}
                     onChange={handleChange}
                     required
                   />
                 </div>
-                <div className={contactStyles.formGroup}>
+
+                <div className={styles.formGroup}>
                   <label htmlFor="email">Email Address</label>
                   <input
-                    type="email"
                     id="email"
                     name="email"
+                    type="email"
                     placeholder="Enter your email"
-                    value={formData.email}
+                    value={form.email}
                     onChange={handleChange}
                     required
                   />
                 </div>
-                <div className={contactStyles.formGroup}>
+
+                <div className={styles.formGroup}>
+                  <label htmlFor="subject">Subject</label>
+                  <input
+                    id="subject"
+                    name="subject"
+                    type="text"
+                    placeholder="What is this about?"
+                    value={form.subject}
+                    onChange={handleChange}
+                    required
+                  />
+                </div>
+
+                <div className={styles.formGroup}>
                   <label htmlFor="message">Message</label>
                   <textarea
                     id="message"
                     name="message"
                     rows={5}
                     placeholder="Write your message here..."
-                    value={formData.message}
+                    value={form.message}
                     onChange={handleChange}
                     required
                   />
                 </div>
-                <button type="submit" className={contactStyles.submitBtn}>
+
+                <button type="submit" className={styles.submitBtn}>
                   Send Message
                 </button>
               </form>
